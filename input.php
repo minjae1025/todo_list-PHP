@@ -33,8 +33,8 @@ $title = $_POST['title'];
     <main>
         <div id="formBox">
             <form action="insert.php" method="post">
-                <h4>ToDo 추가</h4>
-                <table>
+                <h4>헤야할 일 추가</h4>
+                <table class="table">
                     <tr>
                         <td>제목 : </td>
                         <td><input type="text" name="title" value="<?= $title; ?>" readonly></td>
