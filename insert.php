@@ -1,4 +1,5 @@
 <?php
+include("db_conn.php");
 $title = $_POST['title'];
 $contents = $_POST['contents'];
 $date = date("Y-m-d");
@@ -6,14 +7,23 @@ $status = "yet";
 // echo $title.'<br>';
 // echo $contents.'<br>';
 
-$conn = mysqli_connect("localhost", "test", "1111", "testdb");
 $sql = "select * from todos order by Id desc";
 $result = mysqli_query($conn, $sql);
 
 if ($conn) {
-    echo "sucess";
+    ?>
+    <script>
+        alert("추가 성공!")
+    </script>
+    <?php
+    echo "success";
 }
 else {
+    ?>
+    <script>
+        alert("추가 실패!")
+    </script>
+    <?php
     echo "failed";
 }
 
@@ -22,4 +32,4 @@ mysqli_query($conn, $sql);
 mysqli_close($conn);
 ?>
 
-<meta http-equiv="refresh" content="3;url=index.php">
+<meta http-equiv="refresh" content="0;url=index.php">
